@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Discord-inspired dark theme as default */
+    --background: 228 6% 15%;
+    --foreground: 210 10% 90%;
+
+    --card: 228 6% 18%;
+    --card-foreground: 210 10% 90%;
+
+    --popover: 228 6% 20%;
+    --popover-foreground: 210 10% 90%;
+
+    /* Discord Blurple */
+    --primary: 235 86% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 228 6% 22%;
+    --secondary-foreground: 210 10% 85%;
+
+    --muted: 228 6% 25%;
+    --muted-foreground: 215 10% 55%;
+
+    --accent: 235 86% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Discord greens & warnings */
+    --success: 139 47% 44%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 95% 60%;
+    --warning-foreground: 0 0% 10%;
+
+    --border: 228 6% 25%;
+    --input: 228 6% 22%;
+    --ring: 235 86% 65%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 228 7% 12%;
+    --sidebar-foreground: 210 10% 70%;
+    --sidebar-primary: 235 86% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 228 6% 18%;
+    --sidebar-accent-foreground: 210 10% 90%;
+    --sidebar-border: 228 6% 20%;
+    --sidebar-ring: 235 86% 65%;
+
+    /* Surface layers for Discord-style depth */
+    --surface-0: 228 7% 12%;
+    --surface-1: 228 6% 15%;
+    --surface-2: 228 6% 18%;
+    --surface-3: 228 6% 22%;
+
+    /* Online status colors */
+    --online: 139 47% 44%;
+    --idle: 38 95% 60%;
+    --dnd: 0 85% 60%;
+    --offline: 228 6% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Custom scrollbar - Discord style */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--surface-0));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--surface-3));
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+@layer utilities {
+  .discord-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.15), 0 0 40px hsl(var(--primary) / 0.05);
+  }
+  .surface-0 {
+    background-color: hsl(var(--surface-0));
+  }
+  .surface-1 {
+    background-color: hsl(var(--surface-1));
+  }
+  .surface-2 {
+    background-color: hsl(var(--surface-2));
+  }
+  .surface-3 {
+    background-color: hsl(var(--surface-3));
+  }
+}
